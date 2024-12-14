@@ -1,0 +1,182 @@
+/* CSS */
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  background-color: #f1f1f1;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar button {
+  width: 80%;
+  padding: 8px; /* تعديل لتقليل المسافة */
+  margin: 5px 0; /* تعديل لتقليل المسافة */
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px; /* تعديل لتصغير النص */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.main-content {
+  margin-left: 20%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.pending-events {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.events-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.event-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.details-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 50%;  /* تقليص العرض إلى 70% */
+  max-width: 400px; /* الحد الأقصى 500px */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* للسماح بالتمرير إذا كانت المحتويات كبيرة */
+}
+
+.event-photo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  background-color: #c00;
+}
+
+.details-container h3, .details-container p {
+  margin-bottom: 10px;
+}
+
+.details-container .info {
+  display: flex;
+  flex-direction: column;
+  width: 70%;  /* لجعل النصوص في الجهة اليسرى */
+}
+
+.details-container .actions {
+  display: flex;
+  flex-direction: column;
+  width: 30%;  /* لجعل الأزرار أو الاختيارات في الجهة اليمنى */
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
