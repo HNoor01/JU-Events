@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send('Backend is  working!');
 });
 
-// بدء تشغيل السيرفر
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
