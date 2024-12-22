@@ -15,39 +15,35 @@ const createEventRequest = async (req, res) => {
             return res.status(400).json({ error: 'All fields are required.' });
         }
 
-        // التحقق من الموقع المسموح به
+        
         if (!allowedLocations.includes(location)) {
             return res.status(400).json({ error: 'Invalid location. Choose a valid location.' });
         }
 
-        // التحقق من الوقت
+      
         if (!validateTime(time)) {
             return res.status(400).json({ error: 'Event time must be between 08:00 AM and 04:00 PM.' });
         }
 
-        // التحقق من التاريخ
+        
         const eventDate = new Date(date);
         const currentDate = new Date();
         if (eventDate < currentDate) {
             return res.status(400).json({ error: 'Date must not be in the past.' });
         }
 
-        // التحقق من اليوم في الأسبوع
         const dayOfWeek = eventDate.getDay();
         if (dayOfWeek === 5 || dayOfWeek === 6) {
             return res.status(400).json({ error: 'Events cannot be scheduled on Friday or Saturday.' });
         }
 
-        // التحقق من الوقت
         const [hours, minutes] = time.split(':').map(Number);
 
-        // إذا كان هناك صورة مرفقة
         let imageUrl = null;
         if (req.file) {
             imageUrl = `/uploads/${req.file.filename}`; 
         }
 
-        // إنشاء حدث جديد
         const newEvent = await Event.create({
             name,  
             description,
