@@ -69,7 +69,7 @@ const Event = sequelize.define('Event', {
   },
   status: {
     type: DataTypes.ENUM,
-    values: ['Pending', 'Approved', 'Rejected'], // يمكن إضافة المزيد من الحالات
+    values: ['Pending', 'Approved', 'Rejected'],
     defaultValue: 'Pending',
     allowNull: true,
   },
