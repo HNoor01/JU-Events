@@ -4,7 +4,7 @@ const { createEventRequest } = require('../controller/eventController');
 
 
 
-// إنشاء طلب
+
 router.post('/', createEventRequest);
 
 
