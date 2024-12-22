@@ -11,19 +11,15 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.2",
-    "mysql2": "^3.11.5"
+    "mysql2": "^3.11.5",
+    "sequelize": "^6.37.5"
   },
-  
-    "development": {
-        "username": "root",
-        "password": "your_password",
-        "database": "juevents",
-        "host": "127.0.0.1",
-        "port": 3307,
-        "dialect": "mysql"
-    
-}
-
-  
-  
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "juevents",
+    "host": "127.0.0.1",
+    "port": 3307,
+    "dialect": "mysql"
+  }
 }

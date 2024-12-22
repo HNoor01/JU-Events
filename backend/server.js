@@ -1,34 +1,29 @@
-const mysql = require('mysql2');
-const express = require('express'); 
-const app = express();
-const port = 5000; 
+const express = require('express');
+const bodyParser = require('body-parser');
+const sequelize = require('./models/database');
+const eventRoutes = require('./routes/eventRoutes');
 
+const app = express();
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('Backend is  working!');
-});
-
-// بدء تشغيل السيرفر
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  res.send('Welcome to the Event Management API!');
 });
 
 
+app.use('/api/event-requests', eventRoutes);
 
 
-const db = mysql.createConnection({
-    host: '127.0.0.1:3306',
-    user: 'root',  
-    password: '', 
-    database: 'juevents',  
+const PORT = 3000;
+sequelize.authenticate()
+  .then(() => {
+    console.log('Database connected!');
+    sequelize.sync({ alter: true }).then(() => {
+      app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+      });
+    });
+  })
+  .catch(error => {
+    console.error('Failed to connect to the database:', error);
   });
-  
- 
-  db.connect((err) => {
-    if (err) {
-      console.error('Error connecting to the database:', err.stack);
-      return;
-    }
-    console.log('Connected to the database');
-  });
-  
