@@ -55,21 +55,21 @@ const Event = sequelize.define('Event', {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  review_notes: {
+  response_notes : {
     type: DataTypes.TEXT,
     allowNull: true,
   },
-  reviewed_at: {
+  responded_at : {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  reviewed_by: {
+  responsed_by: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
   status: {
     type: DataTypes.ENUM,
-    values: ['Pending', 'Approved', 'Rejected'],
+    values: ['Pending', 'Approved', 'Rejected'], // يمكن إضافة المزيد من الحالات
     defaultValue: 'Pending',
     allowNull: true,
   },
